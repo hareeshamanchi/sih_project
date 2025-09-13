@@ -1,0 +1,93 @@
+/* Awareness Section */
+.awareness ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.awareness ul li {
+  background: rgba(255, 255, 255, 0.15);
+  margin-bottom: 10px;
+  padding: 12px 20px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.awareness ul li:hover {
+  transform: translateX(10px);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Monitoring Section */
+.monitoring {
+  text-align: center;
+}
+
+.monitoring p {
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Report Preview Section */
+.report-preview {
+  text-align: center;
+}
+
+.report-preview .cta-btn {
+  margin-top: 20px;
+}
+
+/* Dashboard Preview Section */
+.dashboard-preview {
+  text-align: center;
+}
+
+.dashboard-preview p {
+  max-width: 700px;
+  margin: 0 auto 20px auto;
+  line-height: 1.6;
+}
+
+/* Scroll Animations (Fade & Slide) */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero, .solutions, .awareness, .monitoring, .report-preview, .dashboard-preview {
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .solutions {
+    padding: 60px 20px;
+  }
+
+  .solution-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .awareness, .monitoring, .report-preview, .dashboard-preview {
+    padding: 50px 20px;
+    max-width: 90%;
+  }
+
+  .cta-btn {
+    padding: 10px 22px;
+  }
+}

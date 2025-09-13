@@ -1,0 +1,143 @@
+.case-management {
+  padding: 50px;
+  font-family: "Poppins", sans-serif;
+  background: #f9fafc;
+  color: #333;
+}
+
+.case-management h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #0077b6;
+}
+
+.case-management p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.role-switch {
+  margin-bottom: 20px;
+}
+
+.role-switch select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.filters {
+  margin-bottom: 20px;
+}
+
+.filters button {
+  margin: 5px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  background: #00b4d8;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.filters button:hover {
+  background: #0077b6;
+}
+
+.case-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.case-table th, .case-table td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.case-table th {
+  background: #0077b6;
+  color: #fff;
+}
+
+.status {
+  padding: 5px 12px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.status.pending {
+  background: #ffdd57;
+  color: #333;
+}
+
+.status.reviewed {
+  background: #90e0ef;
+  color: #03045e;
+}
+
+.status.resolved {
+  background: #06d6a0;
+  color: #fff;
+}
+
+.btn-review, .btn-resolve, .btn-update {
+  margin: 3px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-review {
+  background: #ffdd57;
+}
+
+.btn-resolve {
+  background: #06d6a0;
+  color: #fff;
+}
+
+.btn-update {
+  background: #0077b6;
+  color: #fff;
+}
+
+.btn-review:hover {
+  background: #ffc107;
+}
+
+.btn-resolve:hover {
+  background: #05a57e;
+}
+
+.btn-update:hover {
+  background: #005f8a;
+}
+
+
+.charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.chart {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.1);
+}
+
+.chart h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #0077b6;
+  text-align: center;
+}
