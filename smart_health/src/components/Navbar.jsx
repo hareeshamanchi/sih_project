@@ -1,19 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 import "../styles/Navbar.css";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
-
-  const handleSearch = (e) => {
-    e.preventDefault();
-    if (searchQuery.trim() !== "") {
-      // Navigate to a search results page or handle search logic
-      console.log("Search for:", searchQuery);
-      setSearchQuery("");
-    }
-  };
+  const { t } = useTranslation();
 
   return (
     <nav className="navbar">
@@ -26,43 +19,35 @@ function Navbar() {
         <span>SmartHealth</span>
       </div>
 
-      {/* Desktop Links */}
+      {/* Desktop Links - Reordered for better flow */}
       <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
         <li>
-          <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+          <Link to="/" onClick={() => setMenuOpen(false)}>{t('home')}</Link>
         </li>
         <li>
-          <Link to="/awareness" onClick={() => setMenuOpen(false)}>Awareness</Link>
+          <Link to="/dashboard" onClick={() => setMenuOpen(false)}>{t('dashboard')}</Link>
         </li>
         <li>
-          <Link to="/report" onClick={() => setMenuOpen(false)}>Report</Link>
+          <Link to="/casemanagement" onClick={() => setMenuOpen(false)}>{t('cases')}</Link>
         </li>
         <li>
-          <Link to="/dashboard" onClick={() => setMenuOpen(false)}>Dashboard</Link>
+          <Link to="/predictions" onClick={() => setMenuOpen(false)}>{t('predictions')}</Link>
         </li>
         <li>
-          <Link to="/login" onClick={() => setMenuOpen(false)}>Login</Link>
+          <Link to="/awareness" onClick={() => setMenuOpen(false)}>{t('awareness')}</Link>
         </li>
         <li>
-          <Link to="/register" onClick={() => setMenuOpen(false)}>Register</Link>
+          <Link to="/login" onClick={() => setMenuOpen(false)}>{t('login')}</Link>
         </li>
       </ul>
 
-      {/* Search Bar */}
-      <form className="search-box" onSubmit={handleSearch}>
-        <input
-          type="text"
-          placeholder="Search disease, village..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
-        <button type="submit">🔍</button>
-      </form>
-
-      {/* CTA Button */}
-      <Link to="/report" className="btn-report" onClick={() => setMenuOpen(false)}>
-        Report Case
-      </Link>
+      <div className="navbar-right">
+        <LanguageSwitcher />
+        {/* CTA Button */}
+        <Link to="/report" className="btn-report" onClick={() => setMenuOpen(false)}>
+          {t('report_case')}
+        </Link>
+      </div>
 
       {/* Hamburger for Mobile */}
       <div

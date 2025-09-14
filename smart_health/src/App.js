@@ -5,16 +5,15 @@ import "./styles/App.css";
 // Components
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
-import Awareness from "./components/Awareness";
-import Monitoring from "./components/Monitoring";
-import RoleAccess from "./components/RoleAccess";
-import ReportPreview from "./components/ReportPreview";
-import Dashboard from "./components/Dashboard";
-// Import the new components
+import Report from "./components/Report";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import Dashboard from "./components/Dashboard";
+import Awareness from "./components/Awareness";
+import Monitoring from "./components/Monitoring";
 import CaseManagement from "./components/CaseManagement";
-
+import CaseDetail from "./components/CaseDetail";
+import Predictions from './components/Predictions'; // Import the new component
 
 function App() {
   return (
@@ -23,16 +22,17 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/awareness" element={<Awareness />} />
-          <Route path="/monitoring" element={<Monitoring />} />
-          <Route path="/role-access" element={<RoleAccess />} />
-          <Route path="/report-preview" element={<ReportPreview />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/casemanagement" element={<CaseManagement />} />
-          
-          {/* Add the new routes here */}
+          <Route path="/report" element={<Report />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/awareness" element={<Awareness />} />
+          <Route path="/monitoring" element={<Monitoring />} />
+          <Route path="/casemanagement" element={<CaseManagement />} />
+          <Route path="/case/:caseId" element={<CaseDetail />} />
+          
+          {/* Add the new route for the predictions page */}
+          <Route path="/predictions" element={<Predictions />} />
 
         </Routes>
       </div>

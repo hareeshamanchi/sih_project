@@ -141,3 +141,32 @@
   color: #0077b6;
   text-align: center;
 }
+
+/* Add this to the bottom of src/styles/CaseManagement.css */
+
+.table-container {
+  overflow-x: auto; /* Allows horizontal scrolling on small screens */
+  -webkit-overflow-scrolling: touch;
+}
+
+.case-table {
+  min-width: 900px; /* Ensures table has a minimum width before scrolling */
+}
+
+.case-table th, .case-table td {
+  white-space: nowrap; /* Prevents text from wrapping in table cells */
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.controls-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
