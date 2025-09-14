@@ -10,15 +10,17 @@ import Monitoring from "./components/Monitoring";
 import RoleAccess from "./components/RoleAccess";
 import ReportPreview from "./components/ReportPreview";
 import Dashboard from "./components/Dashboard";
+// Import the new components
+import Login from "./components/Login";
+import Register from "./components/Register";
+import CaseManagement from "./components/CaseManagement";
+
 
 function App() {
   return (
     <Router>
       <div className="App">
-        {/* Navbar stays visible on all pages */}
         <Navbar />
-
-        {/* Define Routes */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/awareness" element={<Awareness />} />
@@ -26,6 +28,12 @@ function App() {
           <Route path="/role-access" element={<RoleAccess />} />
           <Route path="/report-preview" element={<ReportPreview />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/casemanagement" element={<CaseManagement />} />
+          
+          {/* Add the new routes here */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+
         </Routes>
       </div>
     </Router>

@@ -3,7 +3,7 @@ import {
   PieChart, Pie, Cell, Tooltip, Legend,
   BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer
 } from "recharts";
-import "./CaseManagement.css";
+import "../styles/CaseManagement.css";
 
 const CaseManagement = () => {
   const [role, setRole] = useState("official");
