@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./styles/App.css";
 
 // Components
@@ -8,36 +9,26 @@ import Awareness from "./components/Awareness";
 import Monitoring from "./components/Monitoring";
 import RoleAccess from "./components/RoleAccess";
 import ReportPreview from "./components/ReportPreview";
-
-import Dashboard from "./components/Dashboard";  // ✅ New Page
+import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
-    <div className="App">
-      {/* Navbar */}
-      <Navbar />
+    <Router>
+      <div className="App">
+        {/* Navbar stays visible on all pages */}
+        <Navbar />
 
-      {/* Home / Hero Section */}
-      <Home />
-
-      {/* Awareness Section */}
-      <Awareness />
-
-      {/* Monitoring Section */}
-      <Monitoring />
-
-      {/* Role-Based Access */}
-      <RoleAccess />
-
-      {/* Report Preview */}
-      <ReportPreview />
-
-      {/* Community Forum */}
-    
-
-      {/* Case Management Dashboard */}
-      <Dashboard />
-    </div>
+        {/* Define Routes */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/awareness" element={<Awareness />} />
+          <Route path="/monitoring" element={<Monitoring />} />
+          <Route path="/role-access" element={<RoleAccess />} />
+          <Route path="/report-preview" element={<ReportPreview />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

@@ -1,8 +1,19 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim() !== "") {
+      // Navigate to a search results page or handle search logic
+      console.log("Search for:", searchQuery);
+      setSearchQuery("");
+    }
+  };
 
   return (
     <nav className="navbar">
@@ -17,21 +28,41 @@ function Navbar() {
 
       {/* Desktop Links */}
       <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#awareness">Awareness</a></li>
-        <li><a href="#form">Report</a></li>
-        <li><a href="#dashboard">Dashboard</a></li>
-        <li><a href="#login">Login</a></li>
-        <li><a href="#register">Register</a></li>
+        <li>
+          <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+        </li>
+        <li>
+          <Link to="/awareness" onClick={() => setMenuOpen(false)}>Awareness</Link>
+        </li>
+        <li>
+          <Link to="/report" onClick={() => setMenuOpen(false)}>Report</Link>
+        </li>
+        <li>
+          <Link to="/dashboard" onClick={() => setMenuOpen(false)}>Dashboard</Link>
+        </li>
+        <li>
+          <Link to="/login" onClick={() => setMenuOpen(false)}>Login</Link>
+        </li>
+        <li>
+          <Link to="/register" onClick={() => setMenuOpen(false)}>Register</Link>
+        </li>
       </ul>
 
       {/* Search Bar */}
-      <div className="search-box">
-        <input type="text" placeholder="Search disease, village..." />
-      </div>
+      <form className="search-box" onSubmit={handleSearch}>
+        <input
+          type="text"
+          placeholder="Search disease, village..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+        <button type="submit">🔍</button>
+      </form>
 
       {/* CTA Button */}
-      <a href="#form" className="btn-report">Report Case</a>
+      <Link to="/report" className="btn-report" onClick={() => setMenuOpen(false)}>
+        Report Case
+      </Link>
 
       {/* Hamburger for Mobile */}
       <div
